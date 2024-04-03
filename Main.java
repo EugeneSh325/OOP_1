@@ -1,0 +1,33 @@
+import java.util.ArrayList;
+import java.util.List;
+
+public class Main {
+    public static void main(String[] args) {
+
+
+        List<Product> productList = new ArrayList<>();
+
+
+        productList.add(new HotDrink(250, "Coffee", 150, 95));
+        productList.add(new HotDrink(200, "Coffee", 100, 95));
+        productList.add(new HotDrink(150, "BkackTea", 150, 90));
+        productList.add(new HotDrink(100, "BkackTea", 100, 90));
+        productList.add(new HotDrink(200, "GreenTea", 200, 85));
+        productList.add(new HotDrink(150, "GreenTea", 150, 85));
+
+   
+        HotDrinkVendingMachine vendingMachine = new HotDrinkVendingMachine();
+        vendingMachine.initProduct(productList);
+
+  
+        System.out.println("-----------------------------------------------------------------");
+        System.out.println(vendingMachine.getProduct("Coffee"));
+        System.out.println("-----------------------------------------------------------------");
+        System.out.println(vendingMachine.getProduct("BkackTea"));
+        System.out.println("-----------------------------------------------------------------");
+        System.out.println(vendingMachine.getProduct("GreenTea"));
+        System.out.println("-----------------------------------------------------------------");
+        System.out.println(vendingMachine.getProduct("GreenTea", 150, 85));
+        System.out.println("-----------------------------------------------------------------");
+    }
+}
